@@ -24,7 +24,7 @@ Enable **GitHub Pages** to view the website online.
 
 ## ❤️ Credits
 
-Designed and developed by **Mayank**  
+Designed and developed by **Ptek**  
 Made with love for **Ananya**. 💗
 
 ---
