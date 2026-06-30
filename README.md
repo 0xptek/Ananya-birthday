@@ -1,16 +1,16 @@
 # 💗 Happy Birthday, Ananya
 
-A small birthday surprise made with love, memories, and lots of effort.
+A heartfelt birthday surprise created with love, memories, and a little bit of magic.
 
-This website was created as a special gift to celebrate **Ananya's Birthday**. It includes a beautiful photo gallery, cherished memories, heartfelt words, and a little bit of magic through animations.
+This website was **designed and developed by Ptek** on behalf of **Mayank** as a special birthday gift for **Ananya**. It brings together beautiful memories, heartfelt messages, and elegant animations to create a memorable birthday experience.
 
 ## ✨ Features
 
 - 🎂 Elegant birthday landing page
-- 📸 Photo & memory gallery
-- 💌 Personal letter
-- 💖 Floating hearts & smooth animations
-- 📱 Responsive design
+- 📸 Photo & Memory Gallery
+- 💌 Heartfelt Letter
+- 💖 Floating Hearts & Smooth Animations
+- 📱 Fully Responsive Design
 
 ## 🛠️ Built With
 
@@ -20,13 +20,17 @@ This website was created as a special gift to celebrate **Ananya's Birthday**. I
 
 ## 🚀 Live Demo
 
-Enable **GitHub Pages** to view the website online.
+Visit the live website here:
+
+**https://ananya.vashu.workers.dev**
 
 ## ❤️ Credits
 
-Designed and developed by **Ptek**  
-Made with love for **Ananya**. 💗
+**Designed & Developed by Ptek**
+
+Created on behalf of **Mayank** for **Ananya's Birthday**.
 
 ---
 
-> **Happy Birthday, Bhen! 🌸**
+> **Happy Birthday, Ananya! 🌸**
+> Wishing you a day filled with happiness, love, and beautiful memories.
