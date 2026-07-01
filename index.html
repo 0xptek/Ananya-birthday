@@ -164,6 +164,543 @@ body {
   margin: 0 auto;
 }
 
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.07);
+  box-shadow: 0 16px 50px rgba(44,26,14,0.22);
+  z-index: 10;
+}
+
+.polaroid-img {
+  width: 100%; aspect-ratio: 1;
+  object-fit: cover;
+  background: linear-gradient(135deg, #f0e0cc 0%, #e8c8a8 100%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: 2.5rem;
+  overflow: hidden;
+  position: relative;
+}
+.polaroid-img img,
+.polaroid-img video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.polaroid-img .placeholder-icon { font-size: 2.2rem; opacity: 0.55; }
+.polaroid-img .placeholder-label {
+  font-size: 0.6rem;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--rust);
+  opacity: 0.85;
+  margin-top: 0.3rem;
+}
+
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--ink);
+  text-align: center;
+  margin-top: 0.6rem;
+  line-height: 1.3;
+}
+
+/* ── NOTE SECTION ── */
+.note-section { padding: 6rem 1.5rem; position: relative; z-index: 1; display: flex; justify-content: center; }
+.note-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4a843' fill-opacity='0.07'%3E%3Ccircle cx='20' cy='20' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.note-card {
+  background: #fff;
+  max-width: 680px;
+  width: 100%;
+  border-radius: 3px;
+  padding: 3.5rem clamp(1.5rem, 5vw, 4rem);
+  box-shadow: 0 2px 0 var(--gold), 0 10px 60px rgba(44,26,14,0.12), inset 0 0 0 1px rgba(212,168,67,0.2);
+  position: relative;
+  z-index: 1;
+}
+.note-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 3.5rem;
+  width: 1px; height: 100%;
+  background: rgba(192,98,42,0.15);
+}
+
+.note-header {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--deep);
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--gold);
+}
+
+.note-body {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  line-height: 1.85;
+  color: var(--ink);
+  white-space: pre-line;
+}
+.note-body .highlight { color: var(--rust); font-weight: 700; }
+
+.note-signature {
+  margin-top: 2.5rem;
+  text-align: right;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+/* ── THANK YOU SECTION ── */
+.thanks-section { padding: 6rem 1.5rem; position: relative; z-index: 1; display: flex; justify-content: center; }
+.thanks-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4a843' fill-opacity='0.07'%3E%3Ccircle cx='20' cy='20' r='3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.thanks-card {
+  background: #fff;
+  max-width: 680px;
+  width: 100%;
+  border-radius: 3px;
+  padding: 3.5rem clamp(1.5rem, 5vw, 4rem);
+  box-shadow: 0 2px 0 var(--gold), 0 10px 60px rgba(44,26,14,0.12), inset 0 0 0 1px rgba(212,168,67,0.2);
+  position: relative;
+  z-index: 1;
+}
+.thanks-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 3.5rem;
+  width: 1px; height: 100%;
+  background: rgba(192,98,42,0.15);
+}
+
+.thanks-header {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--deep);
+  font-style: italic;
+  margin-bottom: 2rem;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--gold);
+}
+
+.thanks-body {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  line-height: 1.85;
+  color: var(--ink);
+  white-space: pre-line;
+}
+
+.thanks-signature {
+  margin-top: 2.5rem;
+  text-align: right;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--gold);
+  }
+
+/* ── CLOSING ── */
+.closing { padding: 5rem 1.5rem; text-align: center; position: relative; z-index: 1; background: var(--deep); color: var(--cream); }
+.closing-text { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6vw, 4rem); font-style: italic; line-height: 1.2; margin-bottom: 1rem; }
+.closing-text span { color: var(--gold); }
+.closing-sub { font-family: 'Caveat', cursive; font-size: 1.3rem; color: var(--blush); opacity: 0.8; }
+.stars { margin: 2rem auto 0; font-size: 1.4rem; letter-spacing: 0.4rem; opacity: 0.6; animation: twinkle 3s ease-in-out infinite; }
+@keyframes twinkle { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.9; } }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(255, 214, 231, 0.92); 
+  z-index: 100;
+  align-items: center; justify-content: center;
+  padding: 2rem;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 90vw; max-height: 80vh;
+  border-radius: 3px;
+  box-shadow: 0 0 80px rgba(255, 179, 209, 0.45);
+  animation: popIn 0.35s cubic-bezier(.175,.885,.32,1.275);
+}
+.lightbox-close {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-size: 2rem; color: var(--cream);
+  cursor: pointer; background: none; border: none;
+  transition: color 0.2s;
+}
+.lightbox-close:hover { color: var(--gold); }
+@keyframes popIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* ── REVEAL ON SCROLL ── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Polaroid animation */
+
+.polaroid {
+  background: #fff;
+  padding: 0.9rem 0.9rem 2.5rem;
+  box-shadow: 0 8px 25px rgba(255,182,210,.18), 0 2px 8px rgba(0,0,0,.05);
+  cursor: pointer;
+  width: 180px;
+  position: relative;
+
+  opacity: 0;
+  transform: translateY(30px) rotate(var(--rot));
+  transition: transform .7s ease, opacity .7s ease, box-shadow .3s ease;
+}
+
+.polaroid.visible {
+  opacity: 1;
+  transform: translateY(0) rotate(var(--rot));
+}
+</style>
+</head>
+<body>
+
+<!-- Floating hearts background -->
+<div class="hearts-bg" id="hearts"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✦ 20th July ✦</div>
+  <h1 class="hero-title">Happy<br/><span>Birthday</span><br/>Ananya</h1>
+  <p class="hero-sub">...bhen 💗</p>
+  <div class="scroll-hint">scroll down</div>
+</section>
+
+<!-- PHOTOS -->
+<section class="photos-section">
+  <p class="section-label reveal">the girl who causes chaos</p>
+  <h2 class="section-title reveal">Gallery of Ananya ✦</h2>
+  <div class="polaroid-grid" id="polaroidGrid"></div>
+</section>
+
+<div style="text-align:center; font-size:2rem; color:var(--gold); margin:2rem 0;">✦ 💗 ✦</div>
+
+<!-- THANK YOU -->
+<section class="thanks-section">
+  <div class="thanks-card reveal">
+    <div class="thanks-header">Thankuu bhenn…</div>
+    <div class="thanks-body" id="thanksBody"></div>
+        <div class="thanks-signature">— Mayank ✦</div>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section class="memories-section">
+  <p class="section-label reveal">✦ our memories ✦</p>
+  <h2 class="section-title reveal">that remind me of you</h2>
+  <div class="polaroid-grid" id="memoriesGrid"></div>
+</section>
+
+<div style="text-align:center; font-size:2rem; color:var(--gold); margin:2rem 0;">✦ 💗 ✦</div>
+
+<!-- NOTE -->
+<section class="note-section">
+  <div class="note-card reveal">
+    <div class="note-header">A letter from the heart…</div>
+    <div class="note-body" id="noteBody"></div>
+    <div class="note-signature">— from your big brother Mayank ✦</div>
+  </div>
+</section>
+
+
+<!-- CLOSING -->
+<section class="closing">
+  <p class="closing-text reveal">Tu hai toh <span>sab hai,</span><br/></p>
+  <p class="closing-text reveal">Hamesha <span>saath</span> rahio,<br/>Bhen. 🌙</p>
+  <p class="closing-sub reveal">Happy Birthday Day 💗</p>
+  <div class="stars">✦ ✦ ✦</div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lbClose">✕</button>
+  <img id="lbImg" src="" alt="" />
+</div>
+
+<script>
+// ── FLOATING HEARTS ──
+(function renderHearts() {
+  const EMOJIS = ['💗','🌸','✨','🤍','💫','🌼','💌'];
+  const container = document.getElementById('hearts');
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < 22; i++) {
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.textContent = EMOJIS[Math.floor(Math.random() * EMOJIS.length)];
+    h.style.left = Math.random() * 100 + 'vw';
+    h.style.fontSize = (0.9 + Math.random() * 1.2) + 'rem';
+    h.style.animationDuration = (8 + Math.random() * 14) + 's';
+    h.style.animationDelay = (Math.random() * 12) + 's';
+    frag.appendChild(h);
+  }
+  container.appendChild(frag);
+})();
+
+// ── MEDIA FALLBACKS (shows a placeholder if a file path doesn't exist yet) ──
+function handleImgError(img) {
+  img.parentElement.innerHTML = '<span class="placeholder-icon">🖼️</span><span class="placeholder-label">add photo</span>';
+}
+function handleVideoError(video) {
+  video.parentElement.innerHTML = '<span class="placeholder-icon">🎥</span><span class="placeholder-label">add video</span>';
+}
+
+// ── SHARED POLAROID RENDERER ──
+const ROTATIONS = ['-3deg', '2deg', '-1.5deg', '3.5deg', '-2.5deg', '1deg', '2.5deg'];
+
+function renderPolaroids(containerId, items) {
+  const container = document.getElementById(containerId);
+  const frag = document.createDocumentFragment();
+
+  items.forEach((item, i) => {
+    const pol = document.createElement('div');
+    pol.className = 'polaroid reveal';
+    pol.style.setProperty('--rot', `${Math.floor(Math.random() * 12 - 6)}deg`);
+
+    const isVideo = item.src.endsWith('.mp4');
+    pol.innerHTML = `
+      <div class="polaroid-img">
+        ${isVideo
+          ? `<video autoplay muted loop playsinline onerror="handleVideoError(this)">
+               <source src="${item.src}" type="video/mp4">
+             </video>`
+          : `<img src="${item.src}" alt="${item.caption}" onclick="openLightbox('${item.src}')" onerror="handleImgError(this)">`}
+      </div>
+      <div class="polaroid-caption">${item.caption}</div>
+    `;
+    frag.appendChild(pol);
+  });
+
+  container.appendChild(frag);
+}
+
+// ── GALLERY DATA ──
+const galleryItems = [
+  { src: 'images/photo1.jpg', caption: 'Simple si, par sabse special. 💗' },
+  { src: 'images/photo2.jpg', caption: 'Dil se sabse pyari. 🌸' },
+  { src: 'images/photo3.jpg', caption: 'Phoolon ki tarah hamesha khilti rehna. 🌺' },
+  { src: 'images/photo4.jpg', caption: 'Ye smile kabhi mat badalna. ☺️' },
+  { src: 'images/photo5.jpg', caption: 'Meri sabse pyari bhen. 💗' },
+  { src: 'images/photo6.jpg', caption: 'Thodi mystery bhi zaroori hai. 🖤' },
+  { src: 'images/photo7.jpg', caption: 'Sukoon bhi shayad aise hi dikhta h. ✨️'},
+  { src: 'images/photo8.jpg', caption: 'Pastel wali princess. ✨'},
+  { src: 'images/photo9.jpg', caption: 'Cerified Pookie. 🎀'},
+  { src: 'images/photo10.jpg', caption: 'Itni pyaari... filter bhi pighal gaya. 😂'},
+  { src: 'images/photo11.jpg', caption: 'Dil ke sabse kareeb. 💝'},
+  { src: 'images/photo12.jpg', caption: 'Saadgi mein hi asli khoobsurti hai. 🌼'},
+  {src: 'images/photo13.jpg', caption: 'Badmosh. 🖤'},
+  {src: 'images/photo14.jpg', caption: 'Khoobsurat Kali. 🌷'}
+  
+];
+
+// ── MEMORIES DATA ──
+// Placeholder filenames below — drop your own files into an /images folder
+// using these names (or edit the paths) and they'll show up automatically.
+const memoryItems = [
+  { src: 'images/memory1.jpg', caption: 'Ek photo... hazaar yaadein. ✨️' },
+  { src: 'images/memory2.jpg', caption: 'Ye selfie nahi, ek yaad hai. 💗' },
+  { src: 'images/memory3.jpg', caption: 'Teen photos, ek yaad. 🤍' },
+];
+
+renderPolaroids('polaroidGrid', galleryItems);
+renderPolaroids('memoriesGrid', memoryItems);
+
+// ── LIGHTBOX ──
+const lightbox = document.getElementById('lightbox');
+const lbImg = document.getElementById('lbImg');
+document.getElementById('lbClose').onclick = () => lightbox.classList.remove('open');
+lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+function openLightbox(src) {
+  lbImg.src = src;
+  lightbox.classList.add('open');
+}
+
+// ── NOTE TEXT ──
+const rawNote = `Happy Birthday, Ananya
+
+Sach kahun to tu meri life ka woh hissa hai jinke bina sab kuch adhoora sa lagta hai. Teri batee, tere random mood swings, tera "mujhe farak nahi padta" bolkar bhi sabse zyada farak padna, aur bina wajah mujhe tang karna — ab meri daily routine ka part ban chuka hai.
+
+Thank you har us moment ke liye jab tune saath diya,mujhe samjha, sambala aur bina kisi reason ke bhi mood theek kar diya. Waise kabhi-kabhi lagta hai ki tujhe Nobel Prize milna chahiye — itni confidence ke saath galat hone ke liye. 😄
+
+Tu thodi si pagal hai, thodi si ziddi hai, thodi si drama queen hai... par jo bhi hai, meri pyari bhen hai. Aur haan, thnkuu bhen.
+
+Bas hamesha khush reh, haste reh aur apni ye ajeeb si personality kabhi mat badalna. Kyuki honestly, isi version ki aadat ho gayi hai.
+
+Happy Birthday Day, Bhen! 💗
+Love you bhenn so much 💗🧿`;
+document.getElementById('noteBody').textContent = rawNote;
+
+// ── THANK YOU NOTE TEXT ──
+const rawThanks = `Thankuu bhenn 💗
+
+Bhen jb se tu meri jindagi ma aai h tab se mere pass ek aur waje h jine ki.
+Jb bhi mujhe aacha nhi lagta tb bs tu hi yadd aati h mujhe, thanku bhen mere kharab wakt ma bhi mera sath dene ke liye.
+Aur mujhe sambalne ke liye jb se tu meri life ma aai h har chiz aasan lagti h dukh ma tu yadd aati h or sukh ma bhi tu hi sabse phle ydd aati h mujhe.
+Abb ma aur nhi likh sakta hu warna ma rone lagunga.
+Last ma bs ye ki thanku bhen,
+Aur hamesa mere sath rahio.
+Love uu bhenn 3000💗💗
+Thankuu bhen💗`;
+document.getElementById('thanksBody').textContent = rawThanks;
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>:root {
+  --cream: #fff7fb;
+  --warm: #ffeaf3;
+  --gold: #ffb3d1;
+  --deep: #4a2f3d;
+  --rust: #e88cb2;
+  --blush: #ffd6e7;
+  --ink: #7a5f70;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── FLOATING HEARTS ── */
+.hearts-bg { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+.heart { position: absolute; bottom: -60px; font-size: 1.4rem; opacity: 0; animation: floatUp linear infinite; }
+@keyframes floatUp {
+  0%   { transform: translateY(0) rotate(-15deg); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(ellipse at 50% 0%, #FFDDEB 0%, var(--cream) 70%);
+}
+
+.hero-badge {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--rust);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--warm);
+  border: 1.5px solid var(--blush);
+  border-radius: 100px;
+  padding: 0.4rem 1.2rem;
+  margin-bottom: 1.8rem;
+  opacity: 0;
+  animation: fadeSlideDown 0.8s 0.3s forwards;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--deep);
+  opacity: 0;
+  animation: fadeSlideDown 0.9s 0.6s forwards;
+  text-shadow: 0 0 30px rgba(255,179,209,.25);
+}
+.hero-title span { color: var(--gold); font-style: italic; }
+
+.hero-sub {
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  color: var(--rust);
+  margin-top: 0.8rem;
+  opacity: 0;
+  animation: fadeSlideDown 0.9s 0.9s forwards;
+}
+
+.scroll-hint {
+  position: absolute; bottom: 2rem;
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  opacity: 0;
+  animation: fadeSlideDown 1s 1.5s forwards, pulse 2s 2.5s ease-in-out infinite;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+}
+.scroll-hint::after { content: '↓'; font-size: 1.2rem; }
+
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50%       { opacity: 1; }
+}
+
+/* ── SECTION HEADERS (shared by photos + memories) ── */
+.section-label {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: var(--rust);
+  text-align: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  text-align: center;
+  color: var(--deep);
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+/* ── PHOTOS / POLAROID GRID (shared) ── */
+.photos-section { padding: 5rem 1.5rem; position: relative; z-index: 1; background: var(--warm); }
+.memories-section { padding: 5rem 1.5rem; position: relative; z-index: 1; background: var(--cream); }
+
+.polaroid-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .polaroid {
   background: #fff;
   padding: 0.9rem 0.9rem 2.5rem;
